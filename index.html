@@ -77,6 +77,13 @@ dialog::backdrop{background:rgba(16,43,36,.7)}.mi{padding:clamp(20px,4vw,40px)}
 #rd .bar2{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 16px;background:var(--bg);border-bottom:1px solid var(--line)}
 #rp{padding:12px;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
 #rp canvas{display:block;margin:0 auto 12px;border:1px solid var(--line);background:#fff}
+#rp img{display:block;max-width:100%;margin:0 auto;-webkit-user-drag:none}
+.two ul.cl{list-style:none;padding-left:0}
+.cl li{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);margin:0}
+.cl .m{display:block;color:var(--mut);font-size:.85rem}
+.cl .acts{display:flex;gap:8px}.sm{padding:4px 10px;font-size:.85rem}
+.pm{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.pm button{padding:0;overflow:hidden;line-height:0}.pm img{display:block;height:170px;width:auto}
 @media print{body{display:none!important}}
 .rv{opacity:0;transform:translateY(16px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
 @media(max-width:900px){.hg,.ab,.two,.sk{grid-template-columns:1fr}.sk>div{border-right:0;border-bottom:1px solid var(--line)}.pg{grid-template-columns:1fr 1fr}.pc,.pc.big,.pc.steam{grid-column:span 2}
@@ -121,10 +128,10 @@ dialog::backdrop{background:rgba(16,43,36,.7)}.mi{padding:clamp(20px,4vw,40px)}
 <article><span class="d" data-i="e1d"></span><h3 data-i="e1t"></h3><p data-i="e1p"></p></article>
 <article><span class="d" data-i="e2d"></span><h3 data-i="e2t"></h3><ul><li data-i="e2a"></li><li data-i="e2b"></li><li data-i="e2c"></li></ul></article>
 <article><span class="d" data-i="e3d"></span><h3 data-i="e3t"></h3><ul><li data-i="e3a"></li><li data-i="e3b"></li><li data-i="e3c"></li></ul></article></div>
-<div class="two"><div><h3 data-i="edh"></h3><ul><li data-i="ed1"></li></ul><h3 style="margin-top:24px" data-i="ch"></h3><ul><li>IBM Python for Data Science</li><li>IBM Prompt Engineering</li></ul><p class="ph" data-i="chp"></p></div>
+<div class="two"><div><h3 data-i="edh"></h3><ul><li data-i="ed1"></li></ul><h3 style="margin-top:24px" data-i="ch"></h3><ul class="cl" id="certs"></ul></div>
 <div><h3 data-i="enh"></h3><ul><li data-i="en1"></li><li data-i="en2"></li><li data-i="en3"></li></ul>
 <h3 style="margin-top:24px" data-i="lh"></h3><ul><li data-i="l1"></li><li data-i="l2"></li><li data-i="l3"></li><li data-i="l4"></li></ul>
-<h3 style="margin-top:24px" data-i="ph"></h3><p data-i="pub"></p><p lang="ar" dir="rtl" class="cap" style="font-size:.95rem">نُشرت قصتها «لينا» ضمن الكتاب الجماعي «فسيفساء»، الصادر عن ببلومانيا للنشر والتوزيع – تونس.</p></div></div></div></section>
+<h3 style="margin-top:24px" data-i="ph"></h3><p data-i="pub"></p><div class="pm" id="pubm"></div><p lang="ar" dir="rtl" class="cap" style="font-size:.95rem;margin-top:16px">نُشرت قصتها «لينا» ضمن الكتاب الجماعي «فسيفساء»، الصادر عن ببلومانيا للنشر والتوزيع – تونس.</p></div></div></div></section>
 
 <section id="contact" class="ct"><div class="w rv"><span class="sn" style="color:#e8c3a9">05</span><h2 data-i="ch2"></h2><p style="max-width:52ch;margin-bottom:28px" data-i="ct"></p>
 <div class="cta"><a class="btn p" href="mailto:ynes.manai@gmail.com">ynes.manai@gmail.com</a><a class="btn" href="https://github.com/ynesmanai" target="_blank" rel="noopener">GitHub · ynesmanai</a></div></div></section>
@@ -151,7 +158,7 @@ s1:["Nettoyage et préparation des données","Data cleaning and preparation"],s2
 sh2:["Développement web et applications","Web and application development"],s6:["Intégration d'API d'IA générative","Generative AI API integration"],s7:["Java (projets étudiants)","Java (student projects)"],
 s8:["Analyse de problématiques métier","Business problem analysis"],s9:["E-commerce et contenu Shopify","E-commerce and Shopify content"],s10:["SEO des fiches produits","Product page SEO"],s11:["Étude comparative d'outils BI","BI tools comparative study"],s12:["Présentation des résultats pour l'aide à la décision","Presenting results for decision support"],
 fa:["Tous","All"],fi:["IA","AI"],fd:["Développement","Development"],emp:["Aucun projet dans cette catégorie.","No projects in this category."],
-open:["Voir l'étude de cas","View case study"],rb:["Lire l'étude comparative (consultation seule)","Read the comparative study (view only)"],rn:["Étude comparative BI, juin 2026 · consultation seule","BI comparative study, June 2026 · view only"],ld:["Chargement du document…","Loading document…"],lerr:["Le document n'a pas pu être chargé. Réessayez plus tard.","The document could not be loaded. Please try again later."],close:["Fermer","Close"],
+open:["Voir l'étude de cas","View case study"],vb:["Consulter","View"],vf:["Vérifier","Verify"],pm1:["Carte de présentation de la nouvelle « Lina »","Presentation card for the short story “Lina”"],pm2:["Couverture du recueil « Fusayfisa »","Cover of the collection “Fusayfisa”"],rb:["Lire l'étude comparative (consultation seule)","Read the comparative study (view only)"],rn:["Étude comparative BI, juin 2026 · consultation seule","BI comparative study, June 2026 · view only"],ld:["Chargement du document…","Loading document…"],lerr:["Le document n'a pas pu être chargé. Réessayez plus tard.","The document could not be loaded. Please try again later."],close:["Fermer","Close"],
 e1d:["Juin – juillet 2026","June – July 2026"],e1t:["Université Libre de Tunis — Stagiaire BI & Data Analytics","Université Libre de Tunis — BI & Data Analytics Intern"],e1p:["Analyse prédictive du risque de décrochage étudiant, dashboards Power BI, automatisation de la préparation des données et étude comparative d'outils BI.","Predictive analysis of student dropout risk, Power BI dashboards, data preparation automation and a BI tools comparative study."],
 e2d:["Juillet 2025","July 2025"],e2t:["Vermeg — Stagiaire en analyse de données et visualisation","Vermeg — Data Analysis & Visualization Intern"],e2a:["Traitement de fichiers de logs avec Python","Log file processing with Python"],e2b:["Structuration des données dans MySQL pour l'exploration","Data structuring in MySQL for exploration"],e2c:["Dashboards Power BI mettant en évidence les tendances utiles à la décision","Power BI dashboards highlighting trends useful for decisions"],
 e3d:["Depuis août 2025","Since August 2025"],e3t:["Lecoindesjeux.com — Assistante e-commerce, contenu Shopify","Lecoindesjeux.com — E-commerce Assistant, Shopify content"],e3a:["Mise en ligne et optimisation de fiches produits","Publishing and optimizing product pages"],e3b:["SEO, mots-clés et collections","SEO, keywords and collections"],e3c:["Contribution à la visibilité et à l'expérience utilisateur","Contribution to visibility and user experience"],
@@ -161,7 +168,7 @@ ph:["Publication","Publication"],pub:["Ma nouvelle « Lina » a été publiée d
 enh:["Engagements","Involvement"],en1:["Membre du club InfoLab, ESSECT (depuis 2026)","Member of InfoLab club, ESSECT (since 2026)"],en2:["Ancienne membre du club Hyphestacy, ISI Kef (2024–2025)","Former member of Hyphestacy club, ISI Kef (2024–2025)"],en3:["Bénévolat, École des Aveugles de Bir El Kassa (2023)","Volunteering, École des Aveugles de Bir El Kassa (2023)"],
 ch2:["Un projet data ou une problématique business à explorer ?","Have a data challenge in mind?"],ct:["Je suis intéressée par les projets qui associent analyse de données, compréhension métier et technologies intelligentes.","I am interested in projects that combine data analysis, business understanding and intelligent technologies."],
 sig:["Designed around data, built for decisions.","Designed around data, built for decisions."],
-cvn:["Le fichier cv-ines-manai.pdf n'est pas encore disponible.","The file cv-ines-manai.pdf is not available yet."],
+cvn:["Le CV n'est pas disponible pour le moment.","The CV is not available at the moment."],
 p1c:["Business Intelligence · Predictive Analytics","Business Intelligence · Predictive Analytics"],p1t:["Prédiction du risque de décrochage étudiant","Student dropout risk prediction"],
 p1d:["Solution analytique pour étudier le risque de décrochage, produire des scores individuels et présenter les résultats dans des dashboards Power BI. Stage à l'Université Libre de Tunis, département IT, juin–juillet 2026.","Analytical solution to study dropout risk, produce individual scores and present results in Power BI dashboards. Internship at Université Libre de Tunis, IT department, June–July 2026."],
 p1p:["Quatre scripts Python : fusion des données, projections globales, scoring individuel, prédictions pour les élèves ingénieurs de 3ᵉ année|Modèle de régression logistique, AUC-ROC final de 0,823|Dashboard Power BI multipage|Rigueur méthodologique : correction du data leakage, définition de l'abandon clarifiée, ambiguïté des notes 0.0 / -1, exclusion de lignes fantômes, seuils de risque par percentiles|Aucune donnée personnelle d'étudiant n'est affichée","Four Python scripts: data merging, global projections, individual scoring, predictions for third-year engineering students|Logistic regression model, final AUC-ROC of 0.823|Multipage Power BI dashboard|Methodological rigor: data leakage fixed, dropout definition clarified, 0.0 / -1 grade ambiguity handled, ghost rows excluded, percentile-based risk thresholds|No personal student data is shown"],
@@ -188,7 +195,7 @@ const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelecto
 let L=0,safe=(f,d)=>{try{return f()}catch(e){return d}};
 const tr=k=>I[k][L];
 function applyLang(){document.documentElement.lang=L?"en":"fr";$$("[data-i]").forEach(e=>e.textContent=tr(e.dataset.i));
-$("#lg").textContent=L?"FR":"EN";$("#cvn").textContent=tr("cvn");renderCards();safe(()=>localStorage.setItem("lang",L))}
+$("#lg").textContent=L?"FR":"EN";$("#cvn").textContent=tr("cvn");$("#cv").setAttribute("href",L?"cv-ines-manai-en.pdf":"cv-ines-manai-fr.pdf");renderCards();renderCerts();renderPub();safe(()=>localStorage.setItem("lang",L))}
 function renderCards(){const g=$("#pg");g.innerHTML="";P.forEach(p=>{const b=document.createElement("button");b.className="pc "+(p.cls||"");b.dataset.cat=p.cat;
 b.innerHTML=`<span class="k">${tr(p.id+"c")}</span><h3>${tr(p.id+"t")}</h3>${p.id=="p1"?'<span class="m">AUC-ROC 0,823</span>':""}<small>${tr(p.id+"d")}</small><span class="k">${tr("open")}</span>`;
 b.onclick=()=>openCase(p.id,b);g.append(b)});filter(cur)}
@@ -203,16 +210,27 @@ if(id=="p2"){v=`<h4>${tr("re")}</h4><div class="bar" role="img" aria-label="11 3
 <p style="margin-top:20px"><a class="btn p" href="https://github.com/ynesmanai/resident-evil-steam-data-analysis" target="_blank" rel="noopener">${L?"View project on GitHub":"Voir le projet sur GitHub"}</a></p>
 <img src="images/steam-dashboard-1.png" alt="${L?"Power BI dashboard, page 1":"Dashboard Power BI, page 1"}" loading="lazy" style="width:100%;margin-top:20px;border:1px solid var(--line);border-radius:4px"><img src="images/steam-dashboard-2.png" alt="${L?"Power BI dashboard, page 2":"Dashboard Power BI, page 2"}" loading="lazy" style="width:100%;margin-top:12px;border:1px solid var(--line);border-radius:4px"><img src="images/steam-dashboard-3.png" alt="${L?"Power BI dashboard, page 3":"Dashboard Power BI, page 3"}" loading="lazy" style="width:100%;margin-top:12px;border:1px solid var(--line);border-radius:4px">`}
 if(id=="p3"){v=`<p style="margin:20px 0"><button class="btn p" id="rs">${tr("rb")}</button></p>`}
-$("#db").innerHTML=`<span class="k">${tr(id+"c")}</span><h3 id="dt">${tr(id+"t")}</h3><p>${tr(id+"d")}</p>${v}<ul>${pts}</ul>`;$("#cl").textContent=tr("close");$("#dg").showModal();const rs=$("#rs");if(rs)rs.onclick=openStudy;$("#cl").focus()}
-let pdfP;
-async function openStudy(){const d=$("#rd"),box=$("#rp");box.innerHTML="";$("#rc").textContent=tr("close");$("#rn").textContent=tr("rn");d.showModal();
+$("#db").innerHTML=`<span class="k">${tr(id+"c")}</span><h3 id="dt">${tr(id+"t")}</h3><p>${tr(id+"d")}</p>${v}<ul>${pts}</ul>`;$("#cl").textContent=tr("close");$("#dg").showModal();const rs=$("#rs");if(rs)rs.onclick=()=>openDoc("documents/etude-comparative-bi.pdf",tr("rn"));$("#cl").focus()}
+const docs={};
+async function openDoc(file,title){const d=$("#rd"),box=$("#rp");box.innerHTML="";$("#rc").textContent=tr("close");$("#rn").textContent=title;d.showModal();d.scrollTop=0;
 const m=document.createElement("p");m.className="cap";m.textContent=tr("ld");box.append(m);
-try{if(!window.pdfjsLib){await new Promise((ok,ko)=>{const t=document.createElement("script");t.src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js";t.onload=ok;t.onerror=ko;document.head.append(t)})}
+try{if(/\.(jpe?g|png)$/i.test(file)){const im=new Image();im.alt=title;im.draggable=false;await new Promise((ok,ko)=>{im.onload=ok;im.onerror=()=>ko({code:"image"});im.src=file});box.innerHTML="";box.append(im);return}
+if(!window.pdfjsLib){await new Promise((ok,ko)=>{const t=document.createElement("script");t.src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js";t.onload=ok;t.onerror=ko;document.head.append(t)})}
 pdfjsLib.GlobalWorkerOptions.workerSrc="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
-pdfP=pdfP||pdfjsLib.getDocument("documents/etude-comparative-bi.pdf").promise;const pdf=await pdfP;box.innerHTML="";
+if(!docs[file]){const r=await fetch(file);if(!r.ok)throw {code:"HTTP "+r.status};docs[file]=pdfjsLib.getDocument({data:new Uint8Array(await r.arrayBuffer())}).promise}
+const pdf=await docs[file];box.innerHTML="";
 const dpr=Math.min(window.devicePixelRatio||1,2);
 for(let n=1;n<=pdf.numPages;n++){const pg=await pdf.getPage(n),b=pg.getViewport({scale:1}),sc=(box.clientWidth-24)/b.width,vp=pg.getViewport({scale:sc*dpr}),c=document.createElement("canvas");c.width=vp.width;c.height=vp.height;c.style.width="100%";box.append(c);await pg.render({canvasContext:c.getContext("2d"),viewport:vp}).promise}}
-catch(e){box.innerHTML="";m.textContent=tr("lerr");box.append(m)}}
+catch(e){delete docs[file];box.innerHTML="";m.textContent=tr("lerr")+" ["+(e&&e.code||(e&&e.type==="error"?"script":e&&e.name)||"erreur")+"]";box.append(m)}}
+const C=[
+{t:"Python for Data Science, AI & Development",m:["IBM · Coursera · décembre 2025","IBM · Coursera · December 2025"],f:"documents/certificat-ibm-python-data-science.pdf",v:"https://www.coursera.org/verify/SSP1VRAQLQDC"},
+{t:"Generative AI: Prompt Engineering Basics",m:["IBM · Coursera · juin 2026","IBM · Coursera · June 2026"],f:"documents/certificat-ibm-prompt-engineering.pdf",v:"https://www.coursera.org/verify/FXAD8ZWOSIID"},
+{t:"EF SET English Certificate",m:["Niveau C2 (72/100) · octobre 2026","Level C2 (72/100) · October 2026"],f:"documents/certificat-ef-set-anglais.pdf",v:"https://cert.efset.org/wQJutp"}];
+function renderCerts(){const u=$("#certs");u.innerHTML="";C.forEach(c=>{const li=document.createElement("li");
+li.innerHTML=`<span>${c.t}<span class="m">${c.m[L]}</span></span><span class="acts"><button class="sm">${tr("vb")}</button><a class="btn sm" href="${c.v}" target="_blank" rel="noopener">${tr("vf")}</a></span>`;
+li.querySelector("button").onclick=()=>openDoc(c.f,c.t);u.append(li)})}
+const M=[["images/lina-fusayfisa.jpg","pm1"],["images/fusayfisa-couverture.jpg","pm2"]];
+function renderPub(){const b=$("#pubm");b.innerHTML="";M.forEach(([f,k])=>{const x=document.createElement("button");x.setAttribute("aria-label",tr(k));x.innerHTML=`<img src="${f}" alt="${tr(k)}" loading="lazy">`;x.onclick=()=>openDoc(f,tr(k));b.append(x)})}
 $("#rc").onclick=()=>$("#rd").close();
 $("#rd").addEventListener("contextmenu",e=>e.preventDefault());
 $("#rd").addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&["s","p","c","a"].includes(e.key.toLowerCase()))e.preventDefault()});
@@ -230,7 +248,7 @@ document.addEventListener("keydown",e=>{if(e.key=="Escape"&&$("#lk").classList.c
 $("#up").onclick=()=>scrollTo({top:0});
 addEventListener("scroll",()=>{$("#hd").classList.toggle("s",scrollY>40);$("#up").classList.toggle("v",scrollY>600);
 const y=scrollY+120;$$("#lk a").forEach(a=>{const s=$(a.getAttribute("href"));a.classList.toggle("on",!!s&&s.offsetTop<=y&&s.offsetTop+s.offsetHeight>y)})},{passive:true});
-$("#cv").addEventListener("click",e=>{e.preventDefault();fetch("cv-ines-manai.pdf",{method:"HEAD"}).then(r=>{if(!r.ok)throw 0;location.href="cv-ines-manai.pdf"}).catch(()=>{$("#cvn").hidden=false})});
+$("#cv").addEventListener("click",e=>{e.preventDefault();const u=$("#cv").getAttribute("href");fetch(u,{method:"HEAD"}).then(r=>{if(!r.ok)throw 0;$("#cvn").hidden=true;const a=document.createElement("a");a.href=u;a.download=u;document.body.append(a);a.click();a.remove()}).catch(()=>{$("#cvn").hidden=false})});
 $("#yr").textContent=new Date().getFullYear();
 const io="IntersectionObserver"in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.1}):null;
 $$(".rv").forEach(e=>io?io.observe(e):e.classList.add("in"));

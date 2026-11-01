@@ -73,6 +73,11 @@ dialog::backdrop{background:rgba(16,43,36,.7)}.mi{padding:clamp(20px,4vw,40px)}
 .pipe{display:flex;gap:6px;flex-wrap:wrap;margin:18px 0}.pipe span{flex:1;min-width:110px;border:1px solid var(--line);padding:10px;text-align:center;font-size:.85rem;position:relative}
 .pipe span+span:before{content:"›";position:absolute;left:-10px;color:var(--cu);font-weight:700}
 .bar{display:flex;height:34px;border-radius:var(--r);overflow:hidden;margin:10px 0}.bar i{display:block;font-style:normal;color:#fff;font-size:.82rem;padding:6px 10px}
+#rd{width:min(980px,96vw);height:92vh;max-height:92vh}
+#rd .bar2{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 16px;background:var(--bg);border-bottom:1px solid var(--line)}
+#rp{padding:12px;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+#rp canvas{display:block;margin:0 auto 12px;border:1px solid var(--line);background:#fff}
+@media print{body{display:none!important}}
 .rv{opacity:0;transform:translateY(16px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
 @media(max-width:900px){.hg,.ab,.two,.sk{grid-template-columns:1fr}.sk>div{border-right:0;border-bottom:1px solid var(--line)}.pg{grid-template-columns:1fr 1fr}.pc,.pc.big,.pc.steam{grid-column:span 2}
 #mb{display:inline-block}.links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);flex-direction:column;padding:16px 24px;border-bottom:1px solid var(--line)}.links.o{display:flex}}
@@ -127,6 +132,7 @@ dialog::backdrop{background:rgba(16,43,36,.7)}.mi{padding:clamp(20px,4vw,40px)}
 <footer><div class="w"><div><strong>Inès Manai</strong><br>Data Analytics &amp; Business Intelligence<br><span data-i="sig"></span></div>
 <div><a href="#about" data-i="n1"></a><a href="#projects" data-i="n3"></a><a href="#contact" data-i="n5"></a><br><a href="https://github.com/ynesmanai" target="_blank" rel="noopener">GitHub</a><a href="mailto:ynes.manai@gmail.com">E-mail</a><br>© <span id="yr"></span></div></div></footer>
 <button id="up" aria-label="Retour en haut">↑</button>
+<dialog id="rd" aria-label="Étude comparative"><div class="bar2"><span class="cap" id="rn"></span><button id="rc"></button></div><div id="rp"></div></dialog>
 <dialog id="dg" aria-labelledby="dt"><div class="mi"><button class="x" id="cl" data-i="close"></button><div id="db"></div></div></dialog>
 
 <script>
@@ -145,7 +151,7 @@ s1:["Nettoyage et préparation des données","Data cleaning and preparation"],s2
 sh2:["Développement web et applications","Web and application development"],s6:["Intégration d'API d'IA générative","Generative AI API integration"],s7:["Java (projets étudiants)","Java (student projects)"],
 s8:["Analyse de problématiques métier","Business problem analysis"],s9:["E-commerce et contenu Shopify","E-commerce and Shopify content"],s10:["SEO des fiches produits","Product page SEO"],s11:["Étude comparative d'outils BI","BI tools comparative study"],s12:["Présentation des résultats pour l'aide à la décision","Presenting results for decision support"],
 fa:["Tous","All"],fi:["IA","AI"],fd:["Développement","Development"],emp:["Aucun projet dans cette catégorie.","No projects in this category."],
-open:["Voir l'étude de cas","View case study"],close:["Fermer","Close"],
+open:["Voir l'étude de cas","View case study"],rb:["Lire l'étude comparative (consultation seule)","Read the comparative study (view only)"],rn:["Étude comparative BI, juin 2026 · consultation seule","BI comparative study, June 2026 · view only"],ld:["Chargement du document…","Loading document…"],lerr:["Le document n'a pas pu être chargé. Réessayez plus tard.","The document could not be loaded. Please try again later."],close:["Fermer","Close"],
 e1d:["Juin – juillet 2026","June – July 2026"],e1t:["Université Libre de Tunis — Stagiaire BI & Data Analytics","Université Libre de Tunis — BI & Data Analytics Intern"],e1p:["Analyse prédictive du risque de décrochage étudiant, dashboards Power BI, automatisation de la préparation des données et étude comparative d'outils BI.","Predictive analysis of student dropout risk, Power BI dashboards, data preparation automation and a BI tools comparative study."],
 e2d:["Juillet 2025","July 2025"],e2t:["Vermeg — Stagiaire en analyse de données et visualisation","Vermeg — Data Analysis & Visualization Intern"],e2a:["Traitement de fichiers de logs avec Python","Log file processing with Python"],e2b:["Structuration des données dans MySQL pour l'exploration","Data structuring in MySQL for exploration"],e2c:["Dashboards Power BI mettant en évidence les tendances utiles à la décision","Power BI dashboards highlighting trends useful for decisions"],
 e3d:["Depuis août 2025","Since August 2025"],e3t:["Lecoindesjeux.com — Assistante e-commerce, contenu Shopify","Lecoindesjeux.com — E-commerce Assistant, Shopify content"],e3a:["Mise en ligne et optimisation de fiches produits","Publishing and optimizing product pages"],e3b:["SEO, mots-clés et collections","SEO, keywords and collections"],e3c:["Contribution à la visibilité et à l'expérience utilisateur","Contribution to visibility and user experience"],
@@ -161,8 +167,8 @@ p1d:["Solution analytique pour étudier le risque de décrochage, produire des s
 p1p:["Quatre scripts Python : fusion des données, projections globales, scoring individuel, prédictions pour les élèves ingénieurs de 3ᵉ année|Modèle de régression logistique, AUC-ROC final de 0,823|Dashboard Power BI multipage|Rigueur méthodologique : correction du data leakage, définition de l'abandon clarifiée, ambiguïté des notes 0.0 / -1, exclusion de lignes fantômes, seuils de risque par percentiles|Aucune donnée personnelle d'étudiant n'est affichée","Four Python scripts: data merging, global projections, individual scoring, predictions for third-year engineering students|Logistic regression model, final AUC-ROC of 0.823|Multipage Power BI dashboard|Methodological rigor: data leakage fixed, dropout definition clarified, 0.0 / -1 grade ambiguity handled, ghost rows excluded, percentile-based risk thresholds|No personal student data is shown"],
 pipe:[["Données brutes","Préparation","Modèle prédictif","Scoring du risque","Visualisation"],["Raw data","Preparation","Predictive model","Risk scoring","Visualization"]],
 auc:["AUC-ROC mesure la capacité du modèle à distinguer les catégories d'un problème de classification. Ce n'est pas une précision de 82,3 %. Jauge : 0,5 = hasard, 1 = discrimination parfaite.","AUC-ROC measures the model's ability to tell classes apart in a classification problem. It is not 82.3% accuracy. Gauge: 0.5 = chance, 1 = perfect discrimination."],
-p2c:["Projet personnel · Gaming Analytics · Power BI","Personal project · Gaming Analytics · Power BI"],p2t:["Marché Steam et satisfaction Resident Evil","Steam market and Resident Evil satisfaction"],
-p2d:["Rapport Power BI de trois pages couvrant deux analyses distinctes, avec nettoyage, modélisation et indicateurs dédiés (prix moyen hors jeux gratuits, taux de satisfaction par opus).","Three-page Power BI report covering two separate analyses, with cleaning, modelling and dedicated indicators (average price excluding free games, satisfaction rate per title)."],
+p2c:["Projet personnel · Gaming Analytics · Power BI","Personal project · Gaming Analytics · Power BI"],p2t:["Resident Evil & Steam : exploration data","Resident Evil & Steam: A Data-Driven Exploration"],
+p2d:["Exploration du marché Steam et de la franchise Resident Evil à partir des données de jeux et des avis des joueurs, avec Python et Power BI.","Exploring the Steam gaming market and the Resident Evil franchise through game data and player reviews, using Python and Power BI."],
 p2p:["Partie A, marché Steam : sorties 2000–2025, répartition par plateforme, genres les plus représentés, score Metacritic moyen, prix moyen, proportion de jeux gratuits|Partie B, Resident Evil : volume d'avis, avis positifs/négatifs, satisfaction par opus, analyse des sentiments, tableau par jeu, exemples d'avis utiles|Les valeurs ci-dessous décrivent le jeu de données analysé, pas l'ensemble des joueurs","Part A, Steam market: releases 2000–2025, platform split, most represented genres, average Metacritic score, average price, share of free games|Part B, Resident Evil: review volume, positive/negative reviews, satisfaction per title, sentiment analysis, per-game table, helpful review examples|Values below describe the analysed dataset, not all players"],
 re:["Resident Evil — avis du jeu de données","Resident Evil — dataset reviews"],pos:["positifs","positive"],neg:["négatifs (déduit : total − positifs)","negative (derived: total − positive)"],
 p3c:["Business Intelligence Strategy","Business Intelligence Strategy"],p3t:["Étude comparative d'outils BI (contexte SAGE)","BI tools comparative study (SAGE context)"],
@@ -193,9 +199,25 @@ let opener;
 function openCase(id,el){opener=el;const pts=tr(id+"p").split("|").map(x=>`<li>${x}</li>`).join("");let v="";
 if(id=="p1"){const a=.823,x=40+a*320;v=`<div class="pipe">${I.pipe[0].length&&I.pipe[L].map(s=>`<span>${s}</span>`).join("")}</div>
 <svg viewBox="0 0 400 70" role="img" aria-label="AUC-ROC 0,823" style="width:100%"><rect x="40" y="28" width="320" height="10" fill="var(--bg2)" stroke="var(--line)"/><rect x="40" y="28" width="${a*320}" height="10" fill="var(--cu)"/><line x1="${x}" y1="18" x2="${x}" y2="48" stroke="var(--fg)" stroke-width="2"/><text x="40" y="64" class="tx">0</text><text x="354" y="64" class="tx">1</text><text x="${x-18}" y="14" fill="var(--fg)" font-size="12" font-weight="700">0,823</text></svg><p class="cap">${tr("auc")}</p>`}
-if(id=="p2"){v=`<h4>${tr("re")}</h4><div class="bar" role="img" aria-label="11 366 / 14 473"><i style="width:78.53%;background:var(--g)">78,53 %</i><i style="width:21.47%;background:var(--cu)">21,47 %</i></div><p class="cap">11 366 ${tr("pos")} · 3 107 ${tr("neg")} · total 14 473</p>`}
-$("#db").innerHTML=`<span class="k">${tr(id+"c")}</span><h3 id="dt">${tr(id+"t")}</h3><p>${tr(id+"d")}</p>${v}<ul>${pts}</ul>`;$("#cl").textContent=tr("close");$("#dg").showModal();$("#cl").focus()}
+if(id=="p2"){v=`<h4>${tr("re")}</h4><div class="bar" role="img" aria-label="11 366 / 14 473"><i style="width:78.53%;background:var(--g)">78,53 %</i><i style="width:21.47%;background:var(--cu)">21,47 %</i></div><p class="cap">11 366 ${tr("pos")} · 3 107 ${tr("neg")} · total 14 473</p>
+<p style="margin-top:20px"><a class="btn p" href="https://github.com/ynesmanai/resident-evil-steam-data-analysis" target="_blank" rel="noopener">${L?"View project on GitHub":"Voir le projet sur GitHub"}</a></p>
+<img src="images/steam-dashboard-1.png" alt="${L?"Power BI dashboard, page 1":"Dashboard Power BI, page 1"}" loading="lazy" style="width:100%;margin-top:20px;border:1px solid var(--line);border-radius:4px"><img src="images/steam-dashboard-2.png" alt="${L?"Power BI dashboard, page 2":"Dashboard Power BI, page 2"}" loading="lazy" style="width:100%;margin-top:12px;border:1px solid var(--line);border-radius:4px"><img src="images/steam-dashboard-3.png" alt="${L?"Power BI dashboard, page 3":"Dashboard Power BI, page 3"}" loading="lazy" style="width:100%;margin-top:12px;border:1px solid var(--line);border-radius:4px">`}
+if(id=="p3"){v=`<p style="margin:20px 0"><button class="btn p" id="rs">${tr("rb")}</button></p>`}
+$("#db").innerHTML=`<span class="k">${tr(id+"c")}</span><h3 id="dt">${tr(id+"t")}</h3><p>${tr(id+"d")}</p>${v}<ul>${pts}</ul>`;$("#cl").textContent=tr("close");$("#dg").showModal();const rs=$("#rs");if(rs)rs.onclick=openStudy;$("#cl").focus()}
+let pdfP;
+async function openStudy(){const d=$("#rd"),box=$("#rp");box.innerHTML="";$("#rc").textContent=tr("close");$("#rn").textContent=tr("rn");d.showModal();
+const m=document.createElement("p");m.className="cap";m.textContent=tr("ld");box.append(m);
+try{if(!window.pdfjsLib){await new Promise((ok,ko)=>{const t=document.createElement("script");t.src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js";t.onload=ok;t.onerror=ko;document.head.append(t)})}
+pdfjsLib.GlobalWorkerOptions.workerSrc="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+pdfP=pdfP||pdfjsLib.getDocument("documents/etude-comparative-bi.pdf").promise;const pdf=await pdfP;box.innerHTML="";
+const dpr=Math.min(window.devicePixelRatio||1,2);
+for(let n=1;n<=pdf.numPages;n++){const pg=await pdf.getPage(n),b=pg.getViewport({scale:1}),sc=(box.clientWidth-24)/b.width,vp=pg.getViewport({scale:sc*dpr}),c=document.createElement("canvas");c.width=vp.width;c.height=vp.height;c.style.width="100%";box.append(c);await pg.render({canvasContext:c.getContext("2d"),viewport:vp}).promise}}
+catch(e){box.innerHTML="";m.textContent=tr("lerr");box.append(m)}}
+$("#rc").onclick=()=>$("#rd").close();
+$("#rd").addEventListener("contextmenu",e=>e.preventDefault());
+$("#rd").addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&["s","p","c","a"].includes(e.key.toLowerCase()))e.preventDefault()});
 $("#dg").addEventListener("close",()=>opener&&opener.focus());
+$("#rd").addEventListener("click",e=>{if(e.target==e.currentTarget)e.currentTarget.close()});
 $("#dg").addEventListener("click",e=>{if(e.target==e.currentTarget)e.currentTarget.close()});
 $("#cl").onclick=()=>$("#dg").close();
 $$(".fl button").forEach(b=>b.onclick=()=>filter(b.dataset.f));
